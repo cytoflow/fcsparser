@@ -375,6 +375,17 @@ class FCSParser(object):
             raw_text = raw_text.decode(self._encoding, errors="ignore")
 
         text = self._extract_text_dict(raw_text)
+        
+        ## Partec CyFlow writes non-conformant TEXT segments -- sometimes 
+        # there are spaces at the beginning of a keyword. Remove them.
+        text_keys = list(text.keys())
+        for k in text_keys:
+            old_k = str(k)
+            while '$' in k and k[0] == ' ':
+                k = k[1:]
+            if k != old_k:
+                text[k] = text[old_k]
+                del text[old_k]
 
         ##
         # Extract channel names and convert some of the channel properties
