@@ -1,12 +1,12 @@
 FCSParser
 =================
 
+
 fcsparser is a python package for reading fcs files. 
 
-.. image:: https://travis-ci.org/eyurtsev/fcsparser.svg?branch=master
-   :target: http://travis-ci.org/eyurtsev/fcsparser
-   :alt: Build Status
-
+.. image:: https://github.com/eyurtsev/kor/actions/workflows/test.yml/badge.svg?branch=main&event=push   
+   :target: https://github.com/eyurtsev/kor/actions/workflows/test.yml
+   :alt: Unit Tests
 
 Install
 ==================
@@ -24,13 +24,12 @@ Using
     >>> path = fcsparser.test_sample_path
     >>> meta, data = fcsparser.parse(path, reformat_meta=True)
 
-A more detailed example can be found here: http://nbviewer.ipython.org/github/eyurtsev/fcsparser/blob/master/doc/fcsparser_example.ipynb
-
+A more detailed example can be found here: https://github.com/eyurtsev/fcsparser/blob/master/doc/fcsparser_example.ipynb
 
 Features
 ===================
 
-- **python**: 2.7, 3.3, 3.4
+- **python**: 3.8, 3.9, 3.10, 3.11
 - **FCS Formats**: Supports FCS 2.0, 3.0, and 3.1
 - **FCS Machines**: BD FACSCalibur, BD LSRFortessa, BD LSR-II, MiltenyiBiotec MACSQuant VYB, Sony SH800
 
@@ -56,7 +55,7 @@ LICENSE
 
 The MIT License (MIT)
 
-Copyright (c) 2013-2015 Eugene Yurtsev
+Copyright (c) 2013-2023 Eugene Yurtsev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
