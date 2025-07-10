@@ -591,7 +591,7 @@ class FCSParser(object):
         native_code = "<" if (sys.byteorder == "little") else ">"
         if endian != native_code:
             # swaps the actual bytes and also the endianness
-            data = data.byteswap().newbyteorder()
+            data = data.byteswap().view(data.dtype.newbyteorder())
 
         # Mask off high bits if integer type data
         if text["$DATATYPE"] == "I":
